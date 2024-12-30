@@ -1,30 +1,54 @@
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ravenswood Interactive Documentary</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
   <header>
-    <h1>Welcome to Ravenswood</h1>
-    <p>Discover the history and culture of this Queensland gold mining town.</p>
+    <h1>Ravenswood: A Gold Mining Legacy</h1>
   </header>
-  <nav>
-    <button id="introBtn">Introduction</button>
-    <button id="historyBtn">Gold Mining History</button>
-    <button id="cultureBtn">Culture</button>
-    <button id="mapBtn">Interactive Map</button>
-  </nav>
-  <main id="content">
-    <p>Click a button above to explore!</p>
+  
+  <main>
+    <!-- Interactive Map -->
+    <section id="map-section">
+      <h2>Explore Ravenswood</h2>
+      <div id="map"></div>
+    </section>
+    
+    <!-- Expandable Story Panels -->
+    <section id="stories">
+      <h2>Stories of Ravenswood</h2>
+      <details>
+        <summary>The Discovery of Gold</summary>
+        <p>Gold was discovered in Ravenswood in 1868, turning it into a bustling mining town.</p>
+        <img src="ravenswood-gold.jpg" alt="Ravenswood Gold Mining" loading="lazy">
+      </details>
+      <details>
+        <summary>The Ghost Town Era</summary>
+        <p>After the gold rush faded, Ravenswood became a ghost town, leaving behind historic buildings and tales of the past.</p>
+        <img src="ravenswood-ghost-town.jpg" alt="Historic Ravenswood" loading="lazy">
+      </details>
+    </section>
+    
+    <!-- Audio Narration -->
+    <section id="audio-section">
+      <h2>Listen to Ravenswood's Story</h2>
+      <audio controls>
+        <source src="ravenswood-story.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
   </main>
+  
   <footer>
-    <p>Created with Scrimba</p>
+    <p>&copy; 2024 Ravenswood Interactive Project</p>
   </footer>
+  
   <script src="script.js"></script>
 </body>
 </html>
