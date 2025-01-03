@@ -33,10 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Global audio context
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+// Create and manage a global audio context (ensure only one instance)
+let audioContext = null;
 
 function playSound(url) {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
   fetch(url)
     .then(response => response.arrayBuffer())
     .then(data => audioContext.decodeAudioData(data))
