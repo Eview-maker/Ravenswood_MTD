@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3>${marker.title}</h3>
         <p>${marker.description}</p>
         <button onclick="playSound('sound${index + 1}.mp3')">Play Sound</button>
-      `); // Correctly closed template literal
+      `);
   });
 });
 
