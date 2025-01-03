@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       coords: [-20.0961, 146.8913],
       title: 'Imperial Hotel',
-      description: 'A historic pub that serves as a testament to Ravenswood\'s vibrant past.'
+      description: "A historic pub that serves as a testament to Ravenswood's vibrant past."
     },
     {
       coords: [-20.0939, 146.8951],
       title: 'Masonic Temple',
-      description: 'Built in 1904, the temple is one of Ravenswood\'s most iconic buildings.'
+      description: "Built in 1904, the temple is one of Ravenswood's most iconic buildings."
     }
   ];
 
