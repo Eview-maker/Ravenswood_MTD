@@ -28,22 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
       .bindPopup(`
         <h3>${marker.title}</h3>
         <p>${marker.description}</p>
-        <button onclick="playSound('sound${index + 1}.mp3')">Play Sound</button>
-      `);
-  });
-});
-
-// Function to play sound
-function playSound(url) {
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  fetch(url)
-    .then(response => response.arrayBuffer())
-    .then(data => audioContext.decodeAudioData(data))
-    .then(buffer => {
-      const soundSource = audioContext.createBufferSource();
-      soundSource.buffer = buffer;
-      soundSource.connect(audioContext.destination);
-      soundSource.start(0);
-    })
-    .catch(err => console.error('Audio playback error:', err));
-}
+        <button onclick="playSound('sound${
