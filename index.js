@@ -29,19 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3>${marker.title}</h3>
         <p>${marker.description}</p>
         <button onclick="playSound('sound${index + 1}.mp3')">Play Sound</button>
-      `); // Correctly closed backtick here
+      `); // Ensure the template literal is properly closed
   });
 });
 
-// Create and manage a global audio context
-let audioContext;
+// Declare audioContext globally but initialize only once
+let audioContext = null;
 
 function playSound(url) {
-  // Initialize audioContext only once
+  // Initialize audioContext if it has not been created
   if (!audioContext) {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
   }
 
+  // Fetch and play the audio file
   fetch(url)
     .then((response) => response.arrayBuffer())
     .then((data) => audioContext.decodeAudioData(data))
